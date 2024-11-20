@@ -1,5 +1,6 @@
 package md.maib.methodstask;
 
+
 public class ExecutionService {
     public static void main(String[] args) {
         int randomInt = DataGeneratorUtil.getRandomInt(150, 350);
@@ -23,7 +24,10 @@ public class ExecutionService {
         System.out.println("Random Invalid String de X chars: " + DataGeneratorUtil.generateInvalidRandomString(257));
         System.out.println("Random Invalid String de X chars: " + DataGeneratorUtil.generateInvalidRandomString(5));
 
-        Customer ioncustomer = new Customer("Ion Lungu" , "Ion.lungu@gmail.com", 26);
+        Customer ioncustomer = new Customer();
+        ioncustomer.setName("Ion Lungu");
+        ioncustomer.setEmail("ion.lungu@gmail.com");
+        ioncustomer.setAge(26);
 
         System.out.println("Nume obiect Ion: " + ioncustomer.getName());
         System.out.println("Email obiect Ion: " + ioncustomer.getEmail());
@@ -37,13 +41,16 @@ public class ExecutionService {
         System.out.println("Email obiect Ion: " + ioncustomer.getEmail());
         System.out.println("Varsta obiect Ion: " + ioncustomer.getAge());
 
-        Customer randomDataCustomer = new Customer(DataGeneratorUtil.generateValidRandomString(12),
-                    DataGeneratorUtil.getRandomEmail(), DataGeneratorUtil.getRandomInt(127));
+
+        Customer randomDataCustomer = new Customer();
+        randomDataCustomer.setName(DataGeneratorUtil.generateValidRandomString(12));
+        randomDataCustomer.setEmail(DataGeneratorUtil.getRandomEmail());
+        randomDataCustomer.setAge(DataGeneratorUtil.getRandomInt(127));
 
         System.out.println(randomDataCustomer.toString());
 
         randomDataCustomer.setName(DataGeneratorUtil.generateValidRandomString(6));
-        randomDataCustomer.setAge(DataGeneratorUtil.getRandomInt(18,64));
+        randomDataCustomer.setAge(DataGeneratorUtil.getRandomInt(18, 64));
         randomDataCustomer.setEmail(DataGeneratorUtil.getRandomEmail());
 
         System.out.println(randomDataCustomer.toString());
